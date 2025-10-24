@@ -1,5 +1,4 @@
 from flask import abort, Blueprint, make_response
-from app.models.planet import planets
 
 planets_bp = Blueprint("planets", __name__, url_prefix="/planets")
 
