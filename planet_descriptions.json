@@ -1,0 +1,17 @@
+{
+    "description": "Smallest planet and closest to the Sun. It has no moons, extreme temperature variations, and a heavily cratered surface.", 
+    "name": "Mercury", 
+    "radius": 1516
+}
+
+{
+    "description": "Second planet from the Sun, with a thick carbon dioxide atmosphere that creates a severe greenhouse effect, making it the hottest planet.", 
+    "name": "Venus", 
+    "radius": 3760
+}
+
+{
+    "description": "The third planet from the Sun and where we live! It has a solid surface, liquid water, and a protective atmosphere.", 
+    "name": "Earth", 
+    "radius": 3963
+}
