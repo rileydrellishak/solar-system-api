@@ -15,3 +15,33 @@
     "name": "Earth", 
     "radius": 3963
 }
+
+{
+    "description": "", 
+    "name": "Mars", 
+    "radius": 2106
+}
+
+{
+    "description": "", 
+    "name": "Jupiter", 
+    "radius": 43441
+}
+
+{
+    "description": "", 
+    "name": "Saturn", 
+    "radius": 36184
+}
+
+{
+    "description": "", 
+    "name": "Uranus", 
+    "radius": 15759
+}
+
+{
+    "description": "", 
+    "name": "Neptune", 
+    "radius": 15299
+}

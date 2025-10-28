@@ -1,4 +1,4 @@
-from flask import abort, Blueprint, make_response, request
+from flask import abort, Blueprint, make_response, request, Response
 from ..db import db
 from app.models.planet import Planet
 
@@ -35,22 +35,50 @@ def get_all_planets():
         result.append(dict(id=planet.id, name=planet.name, description=planet.description, radius=planet.radius))
     return result
 
-# Waves 1-2 Routes
-# @planets_bp.get('/<planet_id>')
-# def get_single_planet(planet_id):
-#     planet = validate_planet(planet_id)
-#     return dict(id=planet.id, name=planet.name, description=planet.description, radius=planet.radius)
-        
-# def validate_planet(planet_id):
-#     try:
-#         planet_id = int(planet_id)
-#     except:
-#         response = {'message': f'Planet id ({planet_id}) invalid'}
-#         abort(make_response(response, 400))
+@planets_bp.get('/<planet_id>')
+def get_single_planet(planet_id):
+    planet = validate_planet(planet_id)
 
-#     for planet in planets:
-#         if planet.id == planet_id:
-#             return planet
+    response = dict(id=planet.id, name=planet.name, description=planet.description, radius=planet.radius)
+
+    return response, 200
         
-#     response = {'message': f'Planet id ({planet_id}) not found'}
-#     abort(make_response(response, 404))
+def validate_planet(planet_id):
+    try:
+        planet_id = int(planet_id)
+    except:
+        response = {'message': f'Planet id ({planet_id}) invalid'}
+        abort(make_response(response, 400))
+
+    query = db.select(Planet).where(Planet.id == planet_id)
+    planet = db.session.scalar(query)
+    
+    if not planet:
+        response = {'message': f'Planet id ({planet_id}) not found'}
+        abort(make_response(response, 404))
+    
+    return planet
+
+@planets_bp.put('/<planet_id>')
+def replace_planet(planet_id):
+    planet = validate_planet(planet_id)
+
+    request_body = request.get_json()
+    planet.name = request_body["name"]
+    planet.description = request_body["description"]
+    planet.radius = request_body["radius"]
+
+    db.session.commit()
+
+    return Response(status=204, mimetype='application/json')
+
+
+
+@planets_bp.delete('/<planet_id>')
+def delete_planet(planet_id):
+    planet = validate_planet(planet_id)
+
+    db.session.delete(planet)
+    db.session.commit()
+
+    return Response(status=204, mimetype='application/json')
