@@ -17,31 +17,31 @@
 }
 
 {
-    "description": "", 
+    "description": "Known as the Red Planet, Mars is the fourth planet from the Sun and one of the most explored bodies in our Solar System.", 
     "name": "Mars", 
     "radius": 2106
 }
 
 {
-    "description": "", 
+    "description": "The largest and oldest planet in our Solar System. Jupiter has the shortest day, too, taking only about 10 hours to spin one time around its axis", 
     "name": "Jupiter", 
     "radius": 43441
 }
 
 {
-    "description": "", 
+    "description": "Known for its many rings, Saturn is the 6th planet from the Sun. Saturn's rings are thougt to be made of pieces of comets, asteriods, and shattered moons that broke up before reaching the planet.", 
     "name": "Saturn", 
     "radius": 36184
 }
 
 {
-    "description": "", 
+    "description": "Known as the Ice Giant, Uranus was the first planet found using a telescope in 1781. It takes Uranus about 84 Earth years to orbit once around the Sun.", 
     "name": "Uranus", 
     "radius": 15759
 }
 
 {
-    "description": "", 
+    "description": "Neptune is the furthest planet from the Sun in our solar system. It is the only planet not visible to the naked eye, and it takes about 165 Earth years to orbit the Sun.", 
     "name": "Neptune", 
     "radius": 15299
 }
