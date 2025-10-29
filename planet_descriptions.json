@@ -1,47 +1,42 @@
-{
-    "description": "Smallest planet and closest to the Sun. It has no moons, extreme temperature variations, and a heavily cratered surface.", 
-    "name": "Mercury", 
-    "radius": 1516
-}
-
-{
-    "description": "Second planet from the Sun, with a thick carbon dioxide atmosphere that creates a severe greenhouse effect, making it the hottest planet.", 
-    "name": "Venus", 
-    "radius": 3760
-}
-
-{
-    "description": "The third planet from the Sun and where we live! It has a solid surface, liquid water, and a protective atmosphere.", 
-    "name": "Earth", 
-    "radius": 3963
-}
-
-{
-    "description": "Known as the Red Planet, Mars is the fourth planet from the Sun and one of the most explored bodies in our Solar System.", 
-    "name": "Mars", 
-    "radius": 2106
-}
-
-{
-    "description": "The largest and oldest planet in our Solar System. Jupiter has the shortest day, too, taking only about 10 hours to spin one time around its axis", 
-    "name": "Jupiter", 
-    "radius": 43441
-}
-
-{
-    "description": "Known for its many rings, Saturn is the 6th planet from the Sun. Saturn's rings are thougt to be made of pieces of comets, asteriods, and shattered moons that broke up before reaching the planet.", 
-    "name": "Saturn", 
-    "radius": 36184
-}
-
-{
-    "description": "Known as the Ice Giant, Uranus was the first planet found using a telescope in 1781. It takes Uranus about 84 Earth years to orbit once around the Sun.", 
-    "name": "Uranus", 
-    "radius": 15759
-}
-
-{
-    "description": "Neptune is the furthest planet from the Sun in our solar system. It is the only planet not visible to the naked eye, and it takes about 165 Earth years to orbit the Sun.", 
-    "name": "Neptune", 
-    "radius": 15299
-}
+[
+    {
+        "description": "Smallest planet and closest to the Sun. It has no moons, extreme temperature variations, and a heavily cratered surface.",
+        "name": "Mercury",
+        "radius": 1516
+    },
+    {
+        "description": "Second planet from the Sun, with a thick carbon dioxide atmosphere that creates a severe greenhouse effect, making it the hottest planet.",
+        "name": "Venus",
+        "radius": 3760
+    },
+    {
+        "description": "The third planet from the Sun and where we live! It has a solid surface, liquid water, and a protective atmosphere.",
+        "name": "Earth",
+        "radius": 3963
+    },
+    {
+        "description": "Known as the Red Planet, Mars is the fourth planet from the Sun and one of the most explored bodies in our Solar System.",
+        "name": "Mars",
+        "radius": 2106
+    },
+    {
+        "description": "The largest and oldest planet in our Solar System. Jupiter has the shortest day, too, taking only about 10 hours to spin one time around its axis",
+        "name": "Jupiter",
+        "radius": 43441
+    },
+    {
+        "description": "Known for its many rings, Saturn is the 6th planet from the Sun. Saturn's rings are thougt to be made of pieces of comets, asteriods, and shattered moons that broke up before reaching the planet.",
+        "name": "Saturn",
+        "radius": 36184
+    },
+    {
+        "description": "Known as the Ice Giant, Uranus was the first planet found using a telescope in 1781. It takes Uranus about 84 Earth years to orbit once around the Sun.",
+        "name": "Uranus",
+        "radius": 15759
+    },
+    {
+        "description": "Neptune is the furthest planet from the Sun in our solar system. It is the only planet not visible to the naked eye, and it takes about 165 Earth years to orbit the Sun.",
+        "name": "Neptune",
+        "radius": 15299
+    }
+]
