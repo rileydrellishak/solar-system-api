@@ -28,36 +28,11 @@ def create_planet():
 
 @planets_bp.get('')
 def get_all_planets():
-    query = db.select(Planet)
-
-    name_param = request.args.get('name')
-    if name_param:
-        query = query.where(Planet.name == name_param)
-    
-    description_param = request.args.get('description')
-    if description_param:
-        query = query.where(Planet.description.ilike(f"%{description_param}%"))
-
-    # Find planets with radius in range
-    min_radius = request.args.get('min_radius')
-    max_radius = request.args.get('max_radius')
-    if min_radius is not None:
-        query = query.where(Planet.radius >= min_radius)
-    if max_radius is not None:
-        query = query.where(Planet.radius <= max_radius)
-
-    # Exact match radius
-    radius_param = request.args.get('radius')
-    if radius_param:
-        query = query.where(Planet.radius == radius_param)
-
-    query = query.order_by(Planet.id)
+    query = db.select(Planet).order_by(Planet.id)
     planets = db.session.scalars(query)
-
     result = []
     for planet in planets:
         result.append(dict(id=planet.id, name=planet.name, description=planet.description, radius=planet.radius))
-
     return result
 
 @planets_bp.get('/<planet_id>')
