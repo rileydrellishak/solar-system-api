@@ -6,3 +6,20 @@ class Planet(db.Model):
     name: Mapped[str]
     description: Mapped[str]
     radius: Mapped[int]
+
+    @classmethod
+    def from_dict(cls, planet_data):
+        new_planet = cls(
+            name=planet_data['name'],
+            description=planet_data['description'],
+            radius=planet_data['radius']
+            )
+        return new_planet
+    
+    def to_dict(self):
+        return {
+        "id": self.id,
+        "name": self.name,
+        "description": self.description,
+        "radius": self.radius
+        }
