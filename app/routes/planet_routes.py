@@ -1,7 +1,7 @@
 from flask import Blueprint, request, Response
 from ..db import db
 from app.models.planet import Planet
-from route_utilities import validate_model
+from .route_utilities import validate_model
 
 bp = Blueprint("planets", __name__, url_prefix="/planets")
 
