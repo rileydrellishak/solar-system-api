@@ -1,6 +1,7 @@
 from flask import Blueprint, request, Response
 from ..db import db
 from app.models.planet import Planet
+from app.models.moon import Moon
 from .route_utilities import validate_model
 
 bp = Blueprint("planets", __name__, url_prefix="/planets")
@@ -16,6 +17,16 @@ def create_planet():
 
     return new_planet.to_dict(), 201
 
+@bp.post('/<planet_id>/moons')
+def add_moon_to_existing_planet(planet_id):
+    planet = validate_model(Planet, planet_id)
+    moon_data = request.get_json()
+    moon_data['planet_id'] = planet.id
+    new_moon = Moon.from_dict(moon_data)
+    db.session.add(new_moon)
+    db.session.commit()
+    return new_moon.to_dict(), 201
+
 @bp.get('')
 def get_all_planets():
     query = db.select(Planet).order_by(Planet.id)
@@ -24,6 +35,13 @@ def get_all_planets():
     for planet in planets:
         result.append(planet.to_dict())
     return result
+
+@bp.get('/<planet_id>/moons')
+def get_moons_for_planet(planet_id):
+    planet = validate_model(Planet, planet_id)
+    query = db.select(Moon).where(Moon.planet_id == planet.id).order_by(Moon.id)
+    moons = db.session.scalars(query)
+    return [moon.to_dict() for moon in moons]
 
 @bp.get('/<planet_id>')
 def get_single_planet(planet_id):
